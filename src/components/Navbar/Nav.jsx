@@ -1,5 +1,6 @@
 import React from 'react'
 import '../Navbar/nav.css'
+import { Link } from 'react-router-dom'
 
 export default function Nav() {
     return (
@@ -20,9 +21,9 @@ export default function Nav() {
 
                     <div className='user-options'>
                         <div className='liked-cart'>
-                            <i class='bx bx-home-smile'></i>
-                            <i class='bx bx-heart'></i>
-                            <i class='bx bx-shopping-bag'></i>
+                           <Link to='/'> <i class='bx bx-home-smile'></i></Link>
+                           <Link to='wishlist'>  <i class='bx bx-heart'></i></Link>
+                           <Link to='cart'> <i class='bx bx-shopping-bag'></i></Link>
                         </div>
                         <div className='user-icon'>
                             <button>Login</button>
