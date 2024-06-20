@@ -1,0 +1,69 @@
+.top-section {
+  margin-top: 80px;
+}
+.grid-2-section {
+  
+  border-radius: 10px;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5),  rgba(0, 0, 0, 0.833)),
+    url(../../assets/images/c478f227d92d0d73daee86bfd641a112.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+
+.grid-2-section .content-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 50px 0;
+}
+.content-home p {
+  font-family: "Varela Round", sans-serif;
+  font-weight: 400;
+  color: aliceblue;
+}
+.content-home h5 {
+  font-family: "Mochiy Pop P One", sans-serif;
+  font-weight: 400;
+  font-size: 37px;
+  color: aliceblue;
+  text-align: center;
+  padding: 19px 0 32px 0;
+  
+}
+.content-home button {
+  all: unset;
+
+  border-radius: 20px;
+  background: white;
+  padding: 5px 19px;
+  transition: .4s all;
+}
+.content-home button:hover{
+    background-color: #ffe15c;
+    color: black;
+    scale: 1.2;
+}
+.content-home span {
+  color: #ffe15c;
+}
+@media (max-width: 750px) {
+  .grid-2-section {
+    grid-template-columns: 1fr;
+  }
+  .grid-2-section h5 {
+    font-size: 29px;
+  }
+  .grid-2-section p {
+    padding-top: 55px;
+  }
+  
+  .grid-2-section img {
+    margin-bottom: 30px;
+    width: 90% !important;
+  }
+}
