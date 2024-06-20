@@ -3,7 +3,7 @@ import '../home/home.css'
 import { Link } from 'react-router-dom'
 import Products from '../Products' 
 
-import img1 from '../../assets/images/248d6f25f9e0a1285efa65adede8aa55.jpg'
+
 
 export default function Home() {
   return (
