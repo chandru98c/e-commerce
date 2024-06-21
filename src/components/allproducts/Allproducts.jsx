@@ -4,7 +4,7 @@ import products_data from '../Products_data'
 import '../allproducts/allp.css'
 import { Link } from 'react-router-dom'
 
-export default function Allproducts() {
+export default function Allproducts({addcart,addliked}) {
   return (
     <>
     <section className='all-p-section'>
@@ -20,10 +20,10 @@ export default function Allproducts() {
 {products_data.map((itemlist)=>
 <div className='product-item'>
 <div className='img-like'>
-  <img src={itemlist.product_image} alt="" /><i id='like-icon' class='bx bxs-heart'></i>
+  <img src={itemlist.product_image} alt="" /><i onClick={()=>addliked(itemlist)} id='like-icon' class='bx bxs-heart'></i>
   <p className='like-icon-comment'>Add to WishList</p></div>
 <div className='product-details'>
-  <h3>{ itemlist.price}</h3>
+  <h3>&#8377; { itemlist.price}</h3>
   <h4>{ itemlist.product_name}</h4>
   <p>{itemlist.desc_tion}</p>
   <ul style={{ display: 'flex' }}><li><i class='bx bxs-star'></i></li>
@@ -33,7 +33,7 @@ export default function Allproducts() {
     <li><i class='bx bxs-star'></i></li></ul>
 </div>
 
-<div className='add-cart-icon'><span><i class='bx bx-shopping-bag'></i></span> <p className='cart-icon-comment'>Add to Cart</p></div>
+<button onClick={() => addcart(itemlist)} className='add-cart-icon'><span><i class='bx bx-shopping-bag'></i></span> <p className='cart-icon-comment'>Add to Cart</p></button>
 
 </div>
 )}

@@ -1,11 +1,17 @@
 import React from 'react'
 import '../home/home.css'
 import { Link } from 'react-router-dom'
-import Products from '../Products' 
+import Products from '../Products'
 
 
 
-export default function Home() {
+export default function Home({ addcart,addliked }) {
+
+
+ 
+
+
+
   return (
     <>
       <section className='top-section home-section'>
@@ -22,41 +28,42 @@ export default function Home() {
 
         <div className='product-nav'>
           <ul>
-          <li className='active-li'>NEW ARRIVALS</li>
-          <Link to='allproducts'><li>ALL PRODUCTS</li></Link>
+            <li className='active-li'>NEW ARRIVALS</li>
+            <Link to='allproducts'><li>ALL PRODUCTS</li></Link>
           </ul>
-          </div>
-       
-<div className='products-items-container'>
+        </div>
 
-  {Products.map((itemlist)=>
-  <div className='product-item'>
-  <div className='img-like'>
-    <img src={itemlist.product_image} alt="" /><i id='like-icon' class='bx bxs-heart'></i>
-    <p className='like-icon-comment'>Add to WishList</p></div>
-  <div className='product-details'>
-    <h3>{ itemlist.price}</h3>
-    <h4>{ itemlist.product_name}</h4>
-    <p>{itemlist.desc_tion}</p>
-    <ul style={{ display: 'flex' }}><li><i class='bx bxs-star'></i></li>
-      <li><i class='bx bxs-star'></i></li>
-      <li><i class='bx bxs-star'></i></li>
-      <li><i class='bx bxs-star'></i></li>
-      <li><i class='bx bxs-star'></i></li></ul>
-  </div>
+        <div className='products-items-container'>
 
-  <div className='add-cart-icon'><span><i class='bx bx-shopping-bag'></i></span> <p className='cart-icon-comment'>Add to Cart</p></div>
+          {Products.map((itemlist) =>
+            <div className='product-item'>
+              <div className='img-like'>
+                <img src={itemlist.product_image} alt="" /><i onClick={()=>addliked(itemlist)} id='like-icon' class='bx bxs-heart'></i>
+                <p className='like-icon-comment'>Add to WishList</p></div>
+              <div className='product-details'>
+                <h3>&#8377; {itemlist.price}</h3>
+                <h4>{itemlist.product_name}</h4>
+                <p>{itemlist.desc_tion}</p>
+                <ul style={{ display: 'flex' }}><li><i class='bx bxs-star'></i></li>
+                  <li><i class='bx bxs-star'></i></li>
+                  <li><i class='bx bxs-star'></i></li>
+                  <li><i class='bx bxs-star'></i></li>
+                  <li><i class='bx bxs-star'></i></li></ul>
+              </div>
 
-</div>
-  )}
-</div>
+              <button onClick={() => addcart(itemlist)} 
+                className='add-cart-icon'><span><i class='bx bx-shopping-bag'></i></span> <p className='cart-icon-comment'>Add to Cart</p></button>
+
+            </div>
+          )}
+        </div>
 
         {/* <div className='product-item'>
           <div className='img-like'>
             <img src={img1} alt="" /><i id='like-icon' class='bx bxs-heart'></i>
             <p className='like-icon-comment'>Add to WishList</p></div>
           <div className='product-details'>
-            <h3>&#8377; 5465</h3>
+            <h3>  5465</h3>
             <h4>Shoe</h4>
             <p>ewefw wienfi iwjrij</p>
             <ul style={{ display: 'flex' }}><li><i class='bx bxs-star'></i></li>

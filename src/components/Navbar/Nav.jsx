@@ -22,7 +22,7 @@ export default function Nav() {
                     <div className='user-options'>
                         <div className='liked-cart'>
                            <Link to='/'> <i class='bx bx-home-smile'></i></Link>
-                           <Link to='wishlist'>  <i class='bx bx-heart'></i></Link>
+                           <Link to='wishlist'>  <i style={{cursor:'not-allowed'}} class='bx bx-heart'></i></Link>
                            <Link to='cart'> <i class='bx bx-shopping-bag'></i></Link>
                         </div>
                         <div className='user-icon'>
@@ -38,10 +38,10 @@ export default function Nav() {
             <div className='mobile-nav-container'><nav className='mobile-nav-bar'>
                     <ul>
                         <li><Link to='/'> <i class='bx bx-home-smile'></i></Link></li>
-                        <li><i class='bx bx-search'></i></li>
-                        <li><Link to='wishlist'>  <i class='bx bx-heart'></i></Link></li>
+                        <li><i style={{cursor:'not-allowed'}} class='bx bx-search'></i></li>
+                        <li>  <i style={{cursor:'not-allowed'}} class='bx bx-heart'></i></li>
                         <li> <Link to='cart'> <i class='bx bx-shopping-bag'></i></Link></li>
-                        <li><i class='bx bx-user'></i></li>
+                        <li><i style={{cursor:'not-allowed'}} class='bx bx-user'></i></li>
                     </ul>
                 </nav>
                 </div>
