@@ -37,10 +37,10 @@ export default function Nav() {
             
             <div className='mobile-nav-container'><nav className='mobile-nav-bar'>
                     <ul>
-                        <li><i class='bx bx-home-smile'></i></li>
+                        <li><Link to='/'> <i class='bx bx-home-smile'></i></Link></li>
                         <li><i class='bx bx-search'></i></li>
-                        <li><i class='bx bx-heart'></i></li>
-                        <li><i class='bx bx-shopping-bag'></i></li>
+                        <li><Link to='wishlist'>  <i class='bx bx-heart'></i></Link></li>
+                        <li> <Link to='cart'> <i class='bx bx-shopping-bag'></i></Link></li>
                         <li><i class='bx bx-user'></i></li>
                     </ul>
                 </nav>
