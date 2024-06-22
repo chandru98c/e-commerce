@@ -5,7 +5,7 @@ import products_data from '../Products_data'
 
 export default function Home({ searchQuery, addcart, addliked }) {
   const filteredProducts = products_data.filter((product) =>
-    product.product_name.toLowerCase().includes(searchQuery.toLowerCase())
+    product.product_name.toLowerCase().startsWith(searchQuery.toLowerCase())
 );
 
     const displayedProducts = filteredProducts.slice(0,7)

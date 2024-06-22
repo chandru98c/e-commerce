@@ -8,7 +8,7 @@ export default function Allproducts({addcart,addliked, searchQuery}) {
 
 
   const filteredProducts = products_data.filter((product) =>
-    product.product_name.toLowerCase().includes(searchQuery.toLowerCase())
+    product.product_name.toLowerCase().startsWith(searchQuery.toLowerCase())
 );
   return (
     <>
