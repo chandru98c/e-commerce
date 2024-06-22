@@ -4,7 +4,12 @@ import products_data from '../Products_data'
 import '../allproducts/allp.css'
 import { Link } from 'react-router-dom'
 
-export default function Allproducts({addcart,addliked}) {
+export default function Allproducts({addcart,addliked, searchQuery}) {
+
+
+  const filteredProducts = products_data.filter((product) =>
+    product.product_name.toLowerCase().includes(searchQuery.toLowerCase())
+);
   return (
     <>
     <section className='all-p-section'>
@@ -17,7 +22,7 @@ export default function Allproducts({addcart,addliked}) {
 
           <div className='products-items-container'>
 
-{products_data.map((itemlist)=>
+{filteredProducts.map((itemlist)=>
 <div className='product-item'>
 <div className='img-like'>
   <img src={itemlist.product_image} alt="" /><i onClick={()=>addliked(itemlist)} id='like-icon' class='bx bxs-heart'></i>

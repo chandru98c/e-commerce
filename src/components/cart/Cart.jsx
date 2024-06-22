@@ -99,7 +99,7 @@ export default function Cart({ cart, setcart }) {
                     <button onClick={() => inc(cartitem, 1)}><i class='bx bx-plus'></i></button>
                     
                     </div>
-                    <button className='remove-btn-m' onClick={() => remove(cartitem)}><i class='bx bx-x'></i>Remove</button>
+                    <button className='remove-btn-m' onClick={() => remove(cartitem)}>Remove Item</button>
                 </div>
 
                 
