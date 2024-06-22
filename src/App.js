@@ -1,7 +1,7 @@
 import './App.css';
 import Home from './components/home/Home';
 import Nav from './components/Navbar/Nav';
-import { Route, Routes, BrowserRouter,useLocation  } from 'react-router-dom';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import Wishlist from './components/wishlist/Wishlist';
 import Cart from './components/cart/Cart';
 import Allproducts from './components/allproducts/Allproducts';

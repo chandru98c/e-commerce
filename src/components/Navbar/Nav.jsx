@@ -21,7 +21,7 @@ export default function Nav({ setSearchQuery, cart }) {
         color: 'black',
         fontWeight: '700',
         background: 'white',
-        borderRadius: '8px',
+       
         padding: '0 4px',
         fontSize: '11px',
         cursor: 'pointer'
