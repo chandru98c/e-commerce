@@ -1,11 +1,14 @@
 import './App.css';
 import Home from './components/home/Home';
 import Nav from './components/Navbar/Nav';
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Route, Routes, BrowserRouter,useLocation  } from 'react-router-dom';
 import Wishlist from './components/wishlist/Wishlist';
 import Cart from './components/cart/Cart';
 import Allproducts from './components/allproducts/Allproducts';
 import { useState } from 'react';
+import Productdetails from './components/Productdetails/Productdetails';
+import ScrollToTop from './components/scrolltop';
+import Footer from './components/footer/Footer'
 
 function App() {
   const [cart, setcart] = useState([
@@ -35,7 +38,15 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('');
 
   const addcart = (clist) => {
-    setcart([...cart, clist]);
+    setcart((prevCart) => {
+      const existingProduct = prevCart.find((item) => item.id === clist.id);
+      if (existingProduct) {
+        return prevCart.map((item) =>
+          item.id === clist.id ? { ...item, count: item.count + 1 } : item
+        );
+      }
+      return [...prevCart, { ...clist, count: 1 }];
+    });
     console.log(cart);
   };
 
@@ -47,14 +58,18 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Nav setSearchQuery={setSearchQuery} />
+      <ScrollToTop/>
+        <Nav setSearchQuery={setSearchQuery} cart={cart} />
         <Routes>
-          <Route path='/' element={<Home searchQuery={searchQuery} addcart={addcart} addLiked={addliked} />} />
+          <Route path='/' element={<Home searchQuery={searchQuery} addcart={addcart} cart={cart} addliked={addliked} />} />
           <Route path='wishlist' element={<Wishlist cart={cart} setcart={setcart} liked={liked} setliked={setliked} />} />
           <Route path='cart' element={<Cart cart={cart} setcart={setcart} />} />
-          <Route path='allproducts' element={<Allproducts searchQuery={searchQuery} addcart={addcart} addLiked={addliked} />} />
+          <Route path='allproducts' element={<Allproducts searchQuery={searchQuery} addcart={addcart} addliked={addliked} />} />
+          <Route path="product/:id" element={<Productdetails cart={cart} setcart={setcart}   addcart={addcart} />} />
         </Routes>
       </BrowserRouter>
+
+      <Footer/>
     </>
   );
 }

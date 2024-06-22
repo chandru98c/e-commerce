@@ -1,9 +1,19 @@
 import React from 'react';
 import '../home/home.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import products_data from '../Products_data' 
 
 export default function Home({ searchQuery, addcart, addliked }) {
+    const navigate = useNavigate();
+
+    const handleProductClick = (id) => {
+      navigate(`/product/${id}`);
+    };
+    
+
+
+
+
   const filteredProducts = products_data.filter((product) =>
     product.product_name.toLowerCase().startsWith(searchQuery.toLowerCase())
 );
@@ -30,9 +40,9 @@ export default function Home({ searchQuery, addcart, addliked }) {
                 </div>
                 <div className='products-items-container'>
                     {displayedProducts.map((itemlist) =>
-                        <div key={itemlist.id} className='product-item'>
+                        <div key={itemlist.id} className='product-item' >
                             <div className='img-like'>
-                                <img src={itemlist.product_image} alt="" />
+                                <img src={itemlist.product_image} alt="" onClick={() => handleProductClick(itemlist.id)}/>
                                 <i onClick={() => addliked(itemlist)} id='like-icon' className='bx bxs-heart'></i>
                                 <p className='like-icon-comment'>Add to WishList</p>
                             </div>

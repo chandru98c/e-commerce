@@ -10,17 +10,26 @@
   .all-product-nav ul li{
   color: black;
   transition: .3s all;
+  border-radius: 13px;
+  padding: 5px 12px;
+  font-weight: 500;
+  font-family:  sans-serif;
   
   }
-  .all-product-nav .active-li{
-    text-decoration: underline;
-    color: green;
-  }
-  .all-product-nav li:hover{
-    text-decoration: underline;
-    color: green;
-    scale: 1.2;
-  }
+ .all-product-nav .active-li {
+
+  color: rgb(40, 27, 27);
+  background-color: #F2BB13;
+  box-shadow: inset 0 0 10px 1px rgba(255, 255, 255, 0.219),
+  0px 0px 10px 3px #ffd0008a;
+}
+.all-product-nav li:hover {
+  background-color: #F2BB13;
+  box-shadow: inset 0 0 10px 1px rgba(255, 255, 255, 0.219),
+  0px 0px 10px 3px #ffd0008a;
+  color: rgb(0, 0, 0);
+  scale: 1.2;
+}
   .product-item{
     border-radius: 5px;
       width: 100%;
@@ -30,7 +39,12 @@
       position: relative;
       font-family: "Varela Round", sans-serif;
       font-weight: 400;
+      transition: .4s all;
+    }
+    .product-item img:hover {
+      cursor: pointer;
     
+      transform: translatey(-16px) scale(1.1);
     }
     .product-item img{
       width: 100%;

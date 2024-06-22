@@ -2,9 +2,18 @@ import React, { useEffect, useState } from 'react';
 import '../../components/cart/cart.css';
 import img01 from '../../assets/images/7e94ebbaa1163bb7e4003f9e1879c91b.jpg'
 import img02 from '../../assets/images/5cf6180733a55545edbb461cf5272058.jpg'
+import {  useNavigate } from 'react-router-dom';
 
 export default function Cart({ cart, setcart }) {
   const [totalPrice, setTotalPrice] = useState(0);
+
+  const navigate = useNavigate();
+
+  const handleProductClick = (id) => {
+    navigate(`/product/${id}`);
+   
+  };
+ 
 
   const inc = (data, num) => {
     let findindex = cart.indexOf(data);
@@ -57,8 +66,8 @@ export default function Cart({ cart, setcart }) {
 
           <div className='cart-items-only'>
             {cart.map((cartitem) => (
-              <div className='cart-item-list' key={cartitem.id}>
-                <img src={cartitem.product_image} alt="" />
+              <div className='cart-item-list' key={cartitem.id} >
+                <img src={cartitem.product_image} alt="" onClick={()=>handleProductClick(cartitem.id)} />
                 <span id='p-details'>
                   <h4>{cartitem.product_name}</h4>
                   <p>{cartitem.desc_tion}</p>

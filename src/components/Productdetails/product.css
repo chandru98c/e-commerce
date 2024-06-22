@@ -1,0 +1,135 @@
+.productdetails-container {
+  margin-top: 90px;
+}
+.details-p {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: rgb(255, 255, 255) ;
+  
+  border-radius: 6px;
+}
+.p-img-container {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.p-img-container img {
+  width: 80%;
+  border-radius: 50%;
+  padding: 30px;
+}
+.p-items-details {
+    width: 100%;
+    background: white ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+    font-family: "Varela Round", sans-serif;
+    font-weight: 400;
+}
+.p-i-details{
+   width: 100%;
+}
+.p-i-price{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.p-i-price ul{
+   display: flex;
+   
+}
+.p-i-price i{
+    color: #ffbf00;
+}
+
+#p-title{
+    font-family: "Varela Round", sans-serif;
+      font-weight: 400;
+      margin: 15px 0 20px 0;
+      display: none;
+      text-align: center;
+}
+.p-buttons{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    
+}
+.p-i-price{
+margin-top: 30px;
+margin-bottom: 50px;
+}
+.p-i-details h3{
+  margin-bottom: 3px;
+    }
+
+    .p-buttons {
+      gap: 6px;
+      align-items: center;
+     
+    }
+    .p-buttons button{
+     border-radius: 25px !important;
+     padding: 4px 0 !important;
+     cursor: pointer !important;
+      all: unset;
+      transition: .4s all !important;
+    }
+    .p-buttons button:hover{
+      transform: scale(.95);
+     }
+    .p-buttons :nth-child(1){
+      text-align: center;
+border: 2px solid #ffbf00; width: 80%;
+
+    }
+    
+    .p-buttons :nth-child(2){
+      text-align: center;
+      background: #ffbf00;width: 80%;
+      border: 2px solid #ffbf00;
+
+   
+    }
+
+@media (max-width: 750px) {
+  .details-p {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .p-img-container img {
+    width: 50%;
+    padding: 0;
+  }
+  #p-title{
+ 
+      display: initial;
+}
+.p-i-price{
+  margin-top: 25px;
+  margin-bottom: 35px;
+  }
+  .p-buttons :nth-child(1){
+    text-align: center;
+border: 2px solid #ffbf00; width: 100%;
+
+  }.p-buttons :nth-child(2){
+    text-align: center;
+border: 2px solid #ffbf00; width: 100%;
+
+  }
+  .p-buttons{
+    margin-top: 20px;
+  }
+
+  
+}
+@media (max-width: 500px) {
+  .p-img-container img {
+    width: 80%;
+  }
+}
