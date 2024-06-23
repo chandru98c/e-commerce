@@ -2,6 +2,9 @@ import React from 'react';
 import '../home/home.css';
 import { Link, useNavigate } from 'react-router-dom';
 import products_data from '../Products_data' 
+import img21 from '../../assets/images/422678abb2468a0fddcd8c9b71594f3c.jpg'
+import img22 from '../../assets/images/248d6f25f9e0a1285efa65adede8aa55.jpg'
+import img23 from '../../assets/images/4d97288f4de00dce3e41d0ffa374f321.jpg'
 
 export default function Home({ searchQuery, addcart, addliked }) {
     const navigate = useNavigate();
@@ -38,6 +41,12 @@ export default function Home({ searchQuery, addcart, addliked }) {
                         <Link to='allproducts'><li>ALL PRODUCTS</li></Link>
                     </ul>
                 </div>
+                
+                <div className='product-add-container'><div className='home-advertisement'>
+                    <img src={img21} alt="" />
+                    <img src={img22} alt="" />
+                    <img src={img23} alt="" />
+                </div>
                 <div className='products-items-container'>
                     {displayedProducts.map((itemlist) =>
                         <div key={itemlist.id} className='product-item' >
@@ -64,6 +73,7 @@ export default function Home({ searchQuery, addcart, addliked }) {
                             </button>
                         </div>
                     )}
+                </div>
                 </div>
             </section>
         </>
