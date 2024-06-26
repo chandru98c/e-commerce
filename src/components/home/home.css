@@ -170,6 +170,10 @@ width: 100% !important;
 
    
   }
+  .products-items-container {
+ 
+    margin: auto;
+  }
 }
 .product-item .add-cart-icon {
   position: absolute;
@@ -266,13 +270,14 @@ width: 100% !important;
 .products-items-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, auto));
-  margin: auto;
+
   gap: 35px;
   width: 75%;
 }
 @media (max-width: 700px) {
   .products-items-container {
     width: 85%;
+    
   }
 }
 .add-cart-icon:hover i {

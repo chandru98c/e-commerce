@@ -8,7 +8,7 @@ const Productdetails = ({addcart}) => {
   const product = products_data.find((product) => product.id === parseInt(id));
 
 
-  console.log(product)
+
 
 
   return (
