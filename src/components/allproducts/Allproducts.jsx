@@ -24,7 +24,7 @@ export default function Allproducts({ addcart, addliked, searchQuery }) {
           </ul>
         </div>
 
-        <div className='products-items-container'>
+        <div className='products-items-container products-items-container-all'>
 
           {filteredProducts.map((itemlist) =>
             <div className='product-item'  >

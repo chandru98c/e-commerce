@@ -16,6 +16,9 @@
   font-family:  sans-serif;
   
   }
+  .products-items-container-all{
+    margin: auto !important;
+  }
  .all-product-nav .active-li {
 
   color: rgb(40, 27, 27);

@@ -270,7 +270,7 @@ width: 100% !important;
 .products-items-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, auto));
-
+height: fit-content;
   gap: 35px;
   width: 75%;
 }
